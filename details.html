@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shteti</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,600;1,600&family=Fraunces:ital,wght@0,700;0,900;1,700;1,900&family=Nunito+Sans:wght@300;600;800&family=Roboto:ital,wght@0,500;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header dark">
+          <h3>Where in the world?</h3>
+          <p onclick="toggleDarkMode()" id="shtyp"><img src="https://www.svgrepo.com/show/511078/moon.svg" alt="darkmode">Dark Mode</p>
+        </div>
+        <div class="body">
+       <button onclick="goBack()" class="goback"><img src="https://www.svgrepo.com/show/67631/back-arrow.svg" alt="">Back</button>
+       <div class="shtetet">
+       <div class="flamuri"><img id="shtetiafi"></div>
+       <div class="tedhenat">
+        <h2 id="countryName"></h2>
+        <div class="tedhenattot">
+         <div class="tedhenat1">
+        <p id="nativename"></p>
+        <p id="population"></p>
+        <p id="region"></p>
+        <p id="subregion"></p>
+        <p id="capital"></p></div>
+        <div class="tedhenat2">
+           <p id="tldomain"></p>
+           <p id="currencies"></p>
+           <p id="languages"></p>
+         </div>
+    </div>
+        <p id="border"></p>
+       </div>
+       
+    </div>
+     </div>
+   </div>
+  <script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 14px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 3rem;
+}
+
+.header img {
+    width: 15px;
+    margin: 0px 5px -1px 0;
+}
+
+.header p {
+  font-size: 14px;
+}
+
+.header h3 {
+    font-size: 20px;
+}
+
+.input {
+    display: flex;
+    justify-content: space-between;
+}
+
+#myInput {
+    background-image: url(https://www.w3schools.com/css/searchicon.png);
+    background-repeat: no-repeat;
+    font-size: 12px;
+    padding: 12px 20px 12px 30px;
+    background-position: 5px;
+    width: 350px;
+    border: none;
+    outline: none;
+}
+
+.shteti img {
+    border-radius: 5px 5px 0px 0px;
+    height: 10rem;
+    width: 16.5rem;
+    object-fit: cover;
+}
+
+.countrys {
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    gap: 80px;
+    padding-top: 40px;
+}
+
+.body {
+    background-color: hsl(0, 0%, 98%);
+    padding: 30px 60px;
+    height: fit-content;
+    min-height: 100vh;
+}
+
+.input select {
+    padding: 5px 15px;
+    font-size: 12px;
+    border: none;
+    outline: none;
+}
+
+.shteti {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 7px 0px;
+    border-radius: 5px;
+    padding-bottom: 3rem;
+    text-decoration: none;
+    width: 230px;
+}
+
+.datashteti {
+    margin-top: 1.3rem;
+    padding: 0px 1.65rem;
+    color: rgb(17, 21, 23);
+}
+
+.emrishteti {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.goback {
+    padding: 5px 20px;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 6px 2px;
+    border: none;
+}
+
+.goback img {
+  width: 10px;
+  margin-right: 10px;
+}
+
+.flamuri img {
+   max-width: 100%;
+   max-height: 100%;
+}
+
+.shtetet {
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.flamuri {
+    max-width: 400px;
+    height: 300px;
+}
+
+.tedhenattot {
+    display:flex;
+    gap:100px;
+    justify-content: center;
+    padding: 20px 0px;
+}
+
+#countryName {
+    font-size: 25px;
+}
+
+.tedhenat {
+    padding: 20px 50px;
+}
+
+.tedhenattot p {
+    padding: 5px 0;
+    font-size: 13px;
+}
+
+
+
+
+
+@media only screen and (max-width: 700px) {
+    .input {
+        display: flex;
+        flex-direction: column;
+        gap : 20px;
+    }
+
+    #myInput {
+        max-width: 100%;
+    }
+
+    .input select {
+        max-width: 50%;
+        padding: 10px;
+    }
+  }
+
+
+  @media only screen and (max-width: 800px) {
+    .shtetet {
+        flex-direction: column;
+        align-items:center;
+    }
+
+    .tedhenattot {
+        flex-direction: column;
+        gap: 30px;
+    }
+  }
