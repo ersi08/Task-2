@@ -1,15 +1,14 @@
-function clearResults() {
-    var countrysContainer = document.querySelector(".countrys");
-    countrysContainer.innerHTML = "";
-  }
-  
-  function displayResults(data) {
+fetch("./data.json")
+.then((res) => res.json())
+.then((data) => displayResults(data));
+
+function displayResults(data) {
     var countrysContainer = document.querySelector(".countrys");
     var markup = "";
   
-    data.forEach((element) => {
+    data.map((element) => {
       markup += `
-        <a class="shteti dark" href="./details.html?code=${element.alpha3Code}">
+        <a class="shteti" href="./details.html?code=${element.alpha3Code}">
           <img src="${element.flags.svg}">
           <div class="datashteti">
           <p class="emrishteti">${element.name}</p>
@@ -20,8 +19,6 @@ function clearResults() {
         </a>
       `;
     });
-    
-  
     countrysContainer.innerHTML = markup;
   }
   
@@ -34,50 +31,10 @@ function clearResults() {
         var filteredData = data.filter((element) =>
           element.name.toLowerCase().includes(search)
         );
-        clearResults();
         displayResults(filteredData);
       });
   }
   
-  fetch("./data.json")
-    .then((res) => res.json())
-    .then((data) => displayResults(data));
-
-  var isToggled=false;
-
- function toggleDarkMode() {
-  if (!isToggled) {
-      isToggled=true;
-      document.getElementById("shtyp").innerHTML = "<img src='https://www.svgrepo.com/show/511078/moon.svg'>Light Mode";
-      document.querySelectorAll(".dark").forEach((el) => {
-        el.style.backgroundColor = "hsl(209, 23%, 22%)";
-      });
-      document.querySelector(".body").style.backgroundColor = "hsl(207, 26%, 17%)";
-      document.querySelector(".container").style.color="white";
-      document.querySelectorAll(".datashteti").forEach((el) => {
-        el.style.color = "white";
-      });
-      document.querySelector("#myInput").style.color="white";
-      document.querySelector("#continents").style.color="white";
-      
-    }
-   else {
-    isToggled=false;
-    document.getElementById("shtyp").innerHTML = "<img src='https://www.svgrepo.com/show/511078/moon.svg'>Dark Mode";
-    document.querySelectorAll(".dark").forEach((el) => {
-      el.style.backgroundColor = "white";
-    });
-    document.querySelector(".body").style.backgroundColor = "white";
-    document.querySelector(".container").style.color="black";
-    document.querySelectorAll(".datashteti").forEach((el) => {
-      el.style.color = "black";
-    });
-    document.querySelector("#myInput").style.color="black";
-    document.querySelector("#continents").style.color="black";
-    
-   }
-}
-
 function filterByRegion() {
   const region = document.getElementById("continents").value;
   fetch("./data.json")
@@ -86,7 +43,6 @@ function filterByRegion() {
       const filteredData = data.filter(element =>
           element.region === region
       );
-      clearResults();
       displayResults(filteredData);
   });
 }
@@ -119,6 +75,34 @@ function populateCountryDetails() {
 
 populateCountryDetails();
 
- function goBack() {
+function goBack() {
       window.history.back();
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const isDarkMode = localStorage.getItem('darkMode') === 'true';
+      const shtyp = document.getElementById("shtyp");
+    
+      if (isDarkMode) {
+        document.body.classList.add("dark-mode");
+      }
+    
+      updateDarkModeText(isDarkMode);
+    });
+    
+    function toggleDarkMode() {
+      const body = document.body;
+      const isDarkMode = body.classList.toggle("dark-mode");
+    
+      updateDarkModeText(isDarkMode);
+      localStorage.setItem('darkMode', isDarkMode.toString());
+    }
+    
+    function updateDarkModeText(isDarkMode) {
+      const shtyp = document.getElementById("shtyp");
+      shtyp.innerHTML = isDarkMode
+        ? '<img src="https://www.svgrepo.com/show/433086/light-mode.svg"> Light Mode'
+        : '<img src="https://www.svgrepo.com/show/511078/moon.svg"> Dark Mode';
+    }
+    
+  

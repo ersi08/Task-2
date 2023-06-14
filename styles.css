@@ -14,11 +14,14 @@
 
 .header img {
     width: 15px;
-    margin: 0px 5px -1px 0;
+    position: relative;
+    top: 3px;
+    right: 2px;
 }
 
 .header p {
   font-size: 14px;
+  cursor: pointer;
 }
 
 .header h3 {
@@ -31,7 +34,8 @@
 }
 
 #myInput {
-    background-image: url(https://www.w3schools.com/css/searchicon.png);
+    background-image: url(https://www.svgrepo.com/show/508172/search-alt.svg);
+    background-size: 18px;
     background-repeat: no-repeat;
     font-size: 12px;
     padding: 12px 20px 12px 30px;
@@ -140,6 +144,25 @@
     font-size: 13px;
 }
 
+
+
+.dark-mode .body {
+    background-color: hsl(207, 26%, 17%);
+  }
+  
+  .dark-mode #myInput,
+  .dark-mode .header,
+  .dark-mode .shteti,
+  .dark-mode .shteti p,
+  .dark-mode #continents,
+  .dark-mode .goback {
+    background-color: hsl(209, 23%, 22%);
+    color: white;
+  }
+  
+ .dark-mode .tedhenat {
+    color: white;
+ }
 
 
 
