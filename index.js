@@ -20,6 +20,7 @@ function clearResults() {
         </a>
       `;
     });
+    
   
     countrysContainer.innerHTML = markup;
   }
