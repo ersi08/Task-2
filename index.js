@@ -81,10 +81,10 @@ function goBack() {
 
     document.addEventListener('DOMContentLoaded', () => {
       const isDarkMode = localStorage.getItem('darkMode') === 'true';
-      const shtyp = document.getElementById("shtyp");
+      const body = document.body;
     
       if (isDarkMode) {
-        document.body.classList.add("dark-mode");
+        body.classList.add("dark-mode");
       }
     
       updateDarkModeText(isDarkMode);
@@ -105,4 +105,17 @@ function goBack() {
         : '<img src="https://www.svgrepo.com/show/511078/moon.svg"> Dark Mode';
     }
     
+    window.addEventListener('pageshow', function(event) {
+      if (event.persisted) {
+        // Page is loaded from the cache
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        const body = document.body;
+    
+        if (isDarkMode) {
+          body.classList.add("dark-mode");
+        }
+    
+        updateDarkModeText(isDarkMode);
+      }
+    });
   
